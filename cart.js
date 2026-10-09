@@ -17,3 +17,4 @@ export function removeItem(cart, id) {
   cart.items = cart.items.filter((i) => i.id !== id);
   return cart;
 }
+// note 0
