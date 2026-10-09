@@ -2,7 +2,7 @@
 export function addItem(cart, item) {
   const existing = cart.items.find((i) => i.id === item.id);
   if (existing) {
-    existing.qty += item.qty;
+    existing.qty = item.qty;
   } else {
     cart.items.push({ ...item });
   }
