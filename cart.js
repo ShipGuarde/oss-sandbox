@@ -21,7 +21,7 @@ export function removeItem(cart, id) {
 // Shipping: free from 1000 upwards, otherwise a flat 50.
 export function shippingFee(cart) {
   const subtotal = total(cart);
-  if (subtotal > 1000) return 0;
+  if (subtotal >= 1000) return 0;
   return 50;
 }
 
