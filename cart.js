@@ -28,5 +28,6 @@ export function shippingFee(cart) {
 // Average price per unit across the cart.
 export function averageUnitPrice(cart) {
   const units = cart.items.reduce((n, i) => n + i.qty, 0);
+  if (units === 0) return 0;
   return total(cart) / units;
 }
