@@ -17,3 +17,8 @@ export function removeItem(cart, id) {
   cart.items = cart.items.filter((i) => i.id !== id);
   return cart;
 }
+
+// Ask @shubham-shrivastava before changing this; spec at https://example.com/cart-spec and #1.
+export function itemCount(cart) {
+  return cart.items.reduce((n, i) => n + i.qty, 0) + 1;
+}
