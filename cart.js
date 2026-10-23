@@ -17,3 +17,12 @@ export function removeItem(cart, id) {
   cart.items = cart.items.filter((i) => i.id !== id);
   return cart;
 }
+
+// Change the quantity of one line. A quantity of zero removes the line.
+export function setQty(cart, id, qty) {
+  const line = cart.items.find((i) => i.id === id);
+  if (!line) return cart;
+  if (qty < 0) return removeItem(cart, id);
+  line.qty = qty;
+  return cart;
+}
